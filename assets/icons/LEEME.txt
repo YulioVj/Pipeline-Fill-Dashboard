@@ -1,0 +1,11 @@
+Carpeta reservada para iconos propios (SVG/PNG) que quieras usar en el
+dashboard en el futuro (por ejemplo, iconos personalizados para las
+tarjetas KPI o las alertas, en vez de los badges de texto actuales).
+
+Actualmente el dashboard no requiere iconos externos: los indicadores
+visuales (semáforos, badges, gauges) se generan con CSS y Chart.js
+directamente en css/dashboard.css y js/charts.js.
+
+Si agregas un icono aquí, referencia su ruta relativa (ej.
+"assets/icons/tu-icono.svg") desde dashboard.html o desde el JS
+correspondiente.
