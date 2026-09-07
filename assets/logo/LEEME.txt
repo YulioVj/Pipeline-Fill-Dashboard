@@ -1,0 +1,30 @@
+LOGO DE VENTO MOTORCYCLES U.S.A.
+==================================
+
+El dashboard usa el logotipo oficial de Vento directamente desde el sitio
+web de la marca, mediante una variable fácilmente modificable definida en
+js/calculations.js:
+
+    const CONFIG = {
+      ...
+      VENTO_LOGO_URL: "https://www.vento.com/wp-content/uploads/vento-logo.svg",
+      ...
+    };
+
+Por qué está así (no como archivo local):
+No fue posible descargar el binario del logo en este entorno de generación
+del proyecto (sin acceso de red al dominio vento.com), así que en lugar de
+crear un logo falso, el dashboard referencia el logotipo real publicado en
+vento.com. Si el logo no carga (por ejemplo, sin conexión a internet, o si
+Vento bloquea el hotlinking en el futuro), el dashboard muestra
+automáticamente un respaldo de texto ("VENTO") para que el header nunca se
+vea roto — ver la función applyLogo() en js/app.js.
+
+Cómo usar un archivo local en su lugar:
+1. Descarga el logo oficial desde https://www.vento.com/ (clic derecho →
+   guardar imagen, o pídelo al equipo de marketing/marca de Vento).
+2. Guárdalo en esta carpeta, por ejemplo: assets/logo/vento-logo.png
+3. En js/calculations.js cambia:
+       VENTO_LOGO_URL: "assets/logo/vento-logo.png"
+4. Listo — dashboard.html ya referencia CONFIG.VENTO_LOGO_URL, no hace
+   falta tocar ningún otro archivo.
